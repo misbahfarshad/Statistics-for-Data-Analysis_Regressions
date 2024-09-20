@@ -1,0 +1,575 @@
+---
+title: "marshad_HW 1"
+output: pdf_document
+date: "2023-01-15"
+editor_options: 
+  chunk_output_type: inline
+---
+
+    setwd("/Users/misbaharshad/Downloads/")
+    df <- read.csv("MTO (1).csv")
+
+    sum(df$treated==1)
+    sum(df$treated==0)
+    sum(df$treated==1)+sum(df$treated==0)
+
+    #Question 1: Fill in the following covariate balance table.
+    treated_mean <- mean(df$male_respondant [df$treated== 1])
+    control_mean <- mean(df$male_respondant[df$treated==0])
+
+    treated_var <- var(df$male_respondant [df$treated== 1])
+    control_var <- var(df$male_respondant[df$treated==0])
+
+
+    size_treated <- sum(df$treated==1)
+    size_control <- sum(df$treated==0)
+
+    diff <- treated_mean - control_mean
+
+
+    denom <- ( (size_treated-1 ) * treated_var + (size_control - 1) * control_var ) * (1/ size_control + 1/ size_treated)/ (size_control+size_treated-2) 
+
+    t_statistic <- diff / sqrt(denom)
+
+    print(t_statistic)
+
+    pvalue <- 2*pt(abs(t_statistic), df=(size_control+size_treated -2), lower.tail = FALSE)
+
+    print(pvalue)
+    ####################
+    treated_mean <- mean(df$black_respondant [df$treated== 1])
+    control_mean <- mean(df$black_respondant[df$treated==0])
+
+    treated_var <- var(df$black_respondant [df$treated== 1])
+    control_var <- var(df$black_respondant[df$treated==0])
+
+
+    size_treated <- sum(df$treated==1)
+    size_control <- sum(df$treated==0)
+
+    diff <- treated_mean - control_mean
+
+
+    denom <- ( (size_treated-1 ) * treated_var + (size_control - 1) * control_var ) * (1/ size_control + 1/ size_treated)/ (size_control+size_treated-2) 
+
+    t_statistic <- diff / sqrt(denom)
+
+    print(t_statistic)
+
+    pvalue <- 2*pt(abs(t_statistic), df=(size_control+size_treated -2), lower.tail = FALSE)
+
+    print(pvalue)
+    ##########
+    treated_mean <- mean(df$high_school_grad_start [df$treated== 1])
+    control_mean <- mean(df$high_school_grad_start[df$treated==0])
+
+    treated_var <- var(df$high_school_grad_start [df$treated== 1])
+    control_var <- var(df$high_school_grad_start[df$treated==0])
+
+
+    size_treated <- sum(df$treated==1)
+    size_control <- sum(df$treated==0)
+
+    diff <- treated_mean - control_mean
+
+
+    denom <- ( (size_treated-1 ) * treated_var + (size_control - 1) * control_var ) * (1/ size_control + 1/ size_treated)/ (size_control+size_treated-2) 
+
+    t_statistic <- diff / sqrt(denom)
+
+    print(t_statistic)
+
+    pvalue <- 2*pt(abs(t_statistic), df=(size_control+size_treated -2), lower.tail = FALSE)
+
+    print(pvalue)
+    ##########
+    treated_mean <- mean(df$never_married_start [df$treated== 1])
+    control_mean <- mean(df$never_married_start[df$treated==0])
+
+    treated_var <- var(df$never_married_start [df$treated== 1])
+    control_var <- var(df$never_married_start[df$treated==0])
+
+
+    size_treated <- sum(df$treated==1)
+    size_control <- sum(df$treated==0)
+
+    diff <- treated_mean - control_mean
+
+
+    denom <- ( (size_treated-1 ) * treated_var + (size_control - 1) * control_var ) * (1/ size_control + 1/ size_treated)/ (size_control+size_treated-2) 
+
+    t_statistic <- diff / sqrt(denom)
+
+    print(t_statistic)
+
+    pvalue <- 2*pt(abs(t_statistic), df=(size_control+size_treated -2), lower.tail = FALSE)
+
+    print(pvalue)
+    ########
+    treated_mean <- mean(df$parent_before_18 [df$treated== 1])
+    control_mean <- mean(df$parent_before_18[df$treated==0])
+
+    treated_var <- var(df$parent_before_18 [df$treated== 1])
+    control_var <- var(df$parent_before_18[df$treated==0])
+
+
+    size_treated <- sum(df$treated==1)
+    size_control <- sum(df$treated==0)
+
+    diff <- treated_mean - control_mean
+
+
+    denom <- ( (size_treated-1 ) * treated_var + (size_control - 1) * control_var ) * (1/ size_control + 1/ size_treated)/ (size_control+size_treated-2) 
+
+    t_statistic <- diff / sqrt(denom)
+
+    print(t_statistic)
+
+    pvalue <- 2*pt(abs(t_statistic), df=(size_control+size_treated -2), lower.tail = FALSE)
+
+    print(pvalue)
+    ##########
+    treated_mean <- mean(df$on_welfare_start [df$treated== 1])
+    control_mean <- mean(df$on_welfare_start[df$treated==0])
+
+    treated_var <- var(df$on_welfare_start [df$treated== 1])
+    control_var <- var(df$on_welfare_start[df$treated==0])
+
+
+    size_treated <- sum(df$treated==1)
+    size_control <- sum(df$treated==0)
+
+    diff <- treated_mean - control_mean
+
+
+    denom <- ( (size_treated-1 ) * treated_var + (size_control - 1) * control_var ) * (1/ size_control + 1/ size_treated)/ (size_control+size_treated-2) 
+
+    t_statistic <- diff / sqrt(denom)
+
+    print(t_statistic)
+
+    pvalue <- 2*pt(abs(t_statistic), df=(size_control+size_treated -2), lower.tail = FALSE)
+
+    print(pvalue)
+    #########
+    treated_mean <- mean(df$victim_of_crime_start [df$treated== 1])
+    control_mean <- mean(df$victim_of_crime_start[df$treated==0])
+
+    treated_var <- var(df$victim_of_crime_start [df$treated== 1])
+    control_var <- var(df$victim_of_crime_start[df$treated==0])
+
+
+    size_treated <- sum(df$treated==1)
+    size_control <- sum(df$treated==0)
+
+    diff <- treated_mean - control_mean
+
+
+    denom <- ( (size_treated-1 ) * treated_var + (size_control - 1) * control_var ) * (1/ size_control + 1/ size_treated)/ (size_control+size_treated-2) 
+
+    t_statistic <- diff / sqrt(denom)
+
+    print(t_statistic)
+
+    pvalue <- 2*pt(abs(t_statistic), df=(size_control+size_treated -2), lower.tail = FALSE)
+
+    print(pvalue)
+    ##########
+    treated_mean <- mean(df$verydissat_neighborhood_start [df$treated== 1])
+    control_mean <- mean(df$verydissat_neighborhood_start[df$treated==0])
+
+    treated_var <- var(df$verydissat_neighborhood_start [df$treated== 1])
+    control_var <- var(df$verydissat_neighborhood_start[df$treated==0])
+
+
+    size_treated <- sum(df$treated==1)
+    size_control <- sum(df$treated==0)
+
+    diff <- treated_mean - control_mean
+
+
+    denom <- ( (size_treated-1 ) * treated_var + (size_control - 1) * control_var ) * (1/ size_control + 1/ size_treated)/ (size_control+size_treated-2) 
+
+    t_statistic <- diff / sqrt(denom)
+
+    print(t_statistic)
+
+    pvalue <- 2*pt(abs(t_statistic), df=(size_control+size_treated -2), lower.tail = FALSE)
+
+    print(pvalue)
+    #######
+    treated_mean <- mean(df$want_move_gangs_drugs_start [df$treated== 1])
+    control_mean <- mean(df$want_move_gangs_drugs_start[df$treated==0])
+
+    treated_var <- var(df$want_move_gangs_drugs_start [df$treated== 1])
+    control_var <- var(df$want_move_gangs_drugs_start[df$treated==0])
+
+
+    size_treated <- sum(df$treated==1)
+    size_control <- sum(df$treated==0)
+
+    diff <- treated_mean - control_mean
+
+
+    denom <- ( (size_treated-1 ) * treated_var + (size_control - 1) * control_var ) * (1/ size_control + 1/ size_treated)/ (size_control+size_treated-2) 
+
+    t_statistic <- diff / sqrt(denom)
+
+    print(t_statistic)
+
+    pvalue <- 2*pt(abs(t_statistic), df=(size_control+size_treated -2), lower.tail = FALSE)
+
+    print(pvalue)
+    ######################
+
+    #Question 2: Discuss your findings. Do these baseline characteristics appear balanced?
+    #Yes, these results appear balanced because the differences between the treated and controlled 
+    #means are small. We can tell because the numbers in the "difference" columns are small. This means that the #treatment and control groups are of relatively similar sizes. Furthermore, the p-value of all the 
+    #means is less than our significance level of 0.95. 
+
+    #Question 3: Calculate the treatment effect of receiving a voucher and the statistical significance for each
+    #of the outcomes, filling out the table below. Discuss your findings–– What do you conclude
+    #about the effectiveness of the voucher program?
+
+    #For both happy and working end, if we compare the p-values we see there is no statistically significant #difference in employment oppurtunities and happiness outcomes for those who recieved vouchers and did not 
+    #recieve vouchers. We fail to reject the null hypothesis stating that there is no statistically 
+    #significant difference after recving the voucher in employment and happiness outcomes. 
+
+    working_treated <- filter(df$working_end [df$treated==1])
+
+    treated_mean <- select(df$working_end [df$treated== 1])
+    control_mean <- mean(df$working_end[df$treated==0])
+
+
+    treated_var <- var(df$working_end [df$treated== 1])
+    control_var <- var(df$working_end[df$treated==0])
+
+
+    size_treated <- sum(df$treated==1)
+    size_control <- sum(df$treated==0)
+
+    diff <- treated_mean - control_mean
+
+
+    denom <- ( (size_treated-1 ) * treated_var + (size_control - 1) * control_var ) * (1/ size_control + 1/ size_treated)/ (size_control+size_treated-2) 
+
+    t_statistic <- diff / sqrt(denom)
+
+    print(t_statistic)
+
+    pvalue <- 2*pt(abs(t_statistic), df=(size_control+size_treated -2), lower.tail = FALSE)
+
+    print(pvalue)
+    ###############
+    treated_mean <- mean(df$happy_end [df$treated== 1])
+    control_mean <- mean(df$happy_end[df$treated==0])
+
+    treated_var <- var(df$happy_end [df$treated== 1])
+    control_var <- var(df$happy_end[df$treated==0])
+
+
+    size_treated <- sum(df$treated==1)
+    size_control <- sum(df$treated==0)
+
+    diff <- treated_mean - control_mean
+
+
+    denom <- ( (size_treated-1 ) * treated_var + (size_control - 1) * control_var ) * (1/ size_control + 1/ size_treated)/ (size_control+size_treated-2) 
+
+    t_statistic <- diff / sqrt(denom)
+
+    print(t_statistic)
+
+    pvalue <- 2*pt(abs(t_statistic), df=(size_control+size_treated -2), lower.tail = FALSE)
+
+    print(pvalue)
+
+    #Q4: Calculate the treatment effect and statistical significance of receiving a voucher on working
+    #at endline, working end, and happiness at endline, happy end, separately for each city, filling
+    #out the table below. Discuss your results. 
+    #When comparing happy and working end outcomes between cities, there is no statistically significant difference
+    #except in the case of Baltimore-working end. The p-value is less than our significance level of 0.05 
+    #and when the p-value is low, we reject the null. This means that, based on the parameters of expirement 
+    #alone, the vouchers DID make a difference in employment outcomes in Boston. Other than that, all the other 
+    #cities and outcomes had p-values above 0.05 meaning we fail to reject the null hypothesis stating that 
+    #the voucher has no statistically significant effect. 
+
+    treated_mean <- mean(df$happy_end [df$city== "Baltimore" & df$treated ==1])
+    control_mean <- mean(df$happy_end [df$city== "Baltimore" & df$treated ==0])
+
+    treated_var <- var(df$happy_end [df$city== "Baltimore" & df$treated ==1])
+    control_var <- var(df$happy_end [df$city== "Baltimore" & df$treated ==0])
+
+
+    size_treated <- sum(df$treated==1 & df$city== "Baltimore")
+    size_control <- sum(df$treated==0 & df$city== "Baltimore")
+
+    diff <- treated_mean - control_mean
+
+
+    denom <- ( (size_treated-1 ) * treated_var + (size_control - 1) * control_var ) * (1/ size_control + 1/ size_treated)/ (size_control+size_treated-2) 
+
+    t_statistic <- diff / sqrt(denom)
+
+    print(t_statistic)
+
+    pvalue <- 2*pt(abs(t_statistic), df=(size_control+size_treated -2), lower.tail = FALSE)
+
+    print(pvalue)
+
+    ##################
+    treated_mean <- mean(df$working_end [df$city== "Baltimore" & df$treated ==1])
+    control_mean <- mean(df$working_end [df$city== "Baltimore" & df$treated ==0])
+
+    treated_var <- var(df$working_end [df$city== "Baltimore" & df$treated ==1])
+    control_var <- var(df$working_end [df$city== "Baltimore" & df$treated ==0])
+
+
+    size_treated <- sum(df$treated==1 & df$city== "Baltimore")
+    size_control <- sum(df$treated==0 & df$city== "Baltimore")
+
+    diff <- treated_mean - control_mean
+
+
+    denom <- ( (size_treated-1 ) * treated_var + (size_control - 1) * control_var ) * (1/ size_control + 1/ size_treated)/ (size_control+size_treated-2) 
+
+    t_statistic <- diff / sqrt(denom)
+
+    print(t_statistic)
+
+    pvalue <- 2*pt(abs(t_statistic), df=(size_control+size_treated -2), lower.tail = FALSE)
+
+    print(pvalue)
+
+    ######################
+    treated_mean <- mean(df$happy_end [df$city== "Boston" & df$treated ==1])
+    control_mean <- mean(df$happy_end [df$city== "Boston" & df$treated ==0])
+
+    treated_var <- var(df$happy_end [df$city== "Boston" & df$treated ==1])
+    control_var <- var(df$happy_end [df$city== "Boston" & df$treated ==0])
+
+
+    size_treated <- sum(df$treated==1 & df$city == "Boston")
+    size_control <- sum(df$treated==0& df$city == "Boston")
+
+    diff <- treated_mean - control_mean
+
+
+    denom <- ( (size_treated-1 ) * treated_var + (size_control - 1) * control_var ) * (1/ size_control + 1/ size_treated)/ (size_control+size_treated-2) 
+
+    t_statistic <- diff / sqrt(denom)
+
+    print(t_statistic)
+
+    pvalue <- 2*pt(abs(t_statistic), df=(size_control+size_treated -2), lower.tail = FALSE)
+
+    print(pvalue)
+    treated_mean <- mean(df$working_end [df$city== "Boston" & df$treated ==1])
+    control_mean <- mean(df$working_end [df$city== "Boston" & df$treated ==0])
+
+    treated_var <- var(df$working_end [df$city== "Boston" & df$treated ==1])
+    control_var <- var(df$working_end [df$city== "Boston" & df$treated ==0])
+
+
+    size_treated <- sum(df$treated==1 & df$city== "Boston")
+    size_control <- sum(df$treated==0 & df$city== "Boston")
+
+    diff <- treated_mean - control_mean
+
+
+    denom <- ( (size_treated-1 ) * treated_var + (size_control - 1) * control_var ) * (1/ size_control + 1/ size_treated)/ (size_control+size_treated-2) 
+
+    t_statistic <- diff / sqrt(denom)
+
+    print(t_statistic)
+
+    pvalue <- 2*pt(abs(t_statistic), df=(size_control+size_treated -2), lower.tail = FALSE)
+
+    print(pvalue)
+    ################
+    treated_mean <- mean(df$happy_end [df$city== "Chicago" & df$treated ==1])
+    control_mean <- mean(df$happy_end [df$city== "Chicago" & df$treated ==0])
+
+    treated_var <- var(df$happy_end [df$city== "Chicago" & df$treated ==1])
+    control_var <- var(df$happy_end [df$city== "Chicago" & df$treated ==0])
+
+
+    size_treated <- sum(df$treated==1 & df$city== "Chicago")
+    size_control <- sum(df$treated==0 & df$city== "Chicago")
+
+    diff <- treated_mean - control_mean
+
+
+    denom <- ( (size_treated-1 ) * treated_var + (size_control - 1) * control_var ) * (1/ size_control + 1/ size_treated)/ (size_control+size_treated-2) 
+
+    t_statistic <- diff / sqrt(denom)
+
+    print(t_statistic)
+
+    pvalue <- 2*pt(abs(t_statistic), df=(size_control+size_treated -2), lower.tail = FALSE)
+
+    print(pvalue)
+    treated_mean <- mean(df$working_end [df$city== "Chicago" & df$treated ==1])
+    control_mean <- mean(df$working_end [df$city== "Chicago" & df$treated ==0])
+
+    treated_var <- var(df$working_end [df$city== "Chicago" & df$treated ==1])
+    control_var <- var(df$working_end [df$city== "Chicago" & df$treated ==0])
+
+
+    size_treated <- sum(df$treated==1 & df$city== "Chicago")
+    size_control <- sum(df$treated==0 & df$city== "Chicago")
+
+    diff <- treated_mean - control_mean
+
+
+    denom <- ( (size_treated-1 ) * treated_var + (size_control - 1) * control_var ) * (1/ size_control + 1/ size_treated)/ (size_control+size_treated-2) 
+
+    t_statistic <- diff / sqrt(denom)
+
+    print(t_statistic)
+
+    pvalue <- 2*pt(abs(t_statistic), df=(size_control+size_treated -2), lower.tail = FALSE)
+
+    print(pvalue)
+
+    ##########
+    treated_mean <- mean(df$happy_end [df$city== "Los Angeles" & df$treated ==1])
+    control_mean <- mean(df$happy_end [df$city== "Los Angeles" & df$treated ==0])
+
+    treated_var <- var(df$happy_end [df$city== "Los Angeles" & df$treated ==1])
+    control_var <- var(df$happy_end [df$city== "Los Angeles" & df$treated ==0])
+
+
+    size_treated <- sum(df$treated==1 & df$city== "Los Angeles")
+    size_control <- sum(df$treated==0& df$city== "Los Angeles")
+
+    diff <- treated_mean - control_mean
+
+
+    denom <- ( (size_treated-1 ) * treated_var + (size_control - 1) * control_var ) * (1/ size_control + 1/ size_treated)/ (size_control+size_treated-2) 
+
+    t_statistic <- diff / sqrt(denom)
+
+    print(t_statistic)
+
+    pvalue <- 2*pt(abs(t_statistic), df=(size_control+size_treated -2), lower.tail = FALSE)
+
+    print(pvalue)
+    treated_mean <- mean(df$working_end [df$city== "Los Angeles" & df$treated ==1])
+    control_mean <- mean(df$working_end [df$city== "Los Angeles" & df$treated ==0])
+
+    treated_var <- var(df$working_end [df$city== "Los Angeles" & df$treated ==1])
+    control_var <- var(df$working_end [df$city== "Los Angeles" & df$treated ==0])
+
+
+    size_treated <- sum(df$treated==1 & df$city== "Los Angeles")
+    size_control <- sum(df$treated==0 & df$city== "Los Angeles")
+
+    diff <- treated_mean - control_mean
+
+
+    denom <- ( (size_treated-1 ) * treated_var + (size_control - 1) * control_var ) * (1/ size_control + 1/ size_treated)/ (size_control+size_treated-2) 
+
+    t_statistic <- diff / sqrt(denom)
+
+    print(t_statistic)
+
+    pvalue <- 2*pt(abs(t_statistic), df=(size_control+size_treated -2), lower.tail = FALSE)
+
+    print(pvalue)
+    #################
+    treated_mean <- mean(df$happy_end [df$city== "New York City" & df$treated ==1])
+    control_mean <- mean(df$happy_end [df$city== "New York City" & df$treated ==0])
+
+    treated_var <- var(df$happy_end [df$city== "New York City" & df$treated ==1])
+    control_var <- var(df$happy_end [df$city== "New York City" & df$treated ==0])
+
+
+    size_treated <- sum(df$treated==1 & df$city== "New York City")
+    size_control <- sum(df$treated==0 & df$city== "New York City")
+
+    diff <- treated_mean - control_mean
+
+
+    denom <- ( (size_treated-1 ) * treated_var + (size_control - 1) * control_var ) * (1/ size_control + 1/ size_treated)/ (size_control+size_treated-2) 
+
+    t_statistic <- diff / sqrt(denom)
+
+    print(t_statistic)
+
+    pvalue <- 2*pt(abs(t_statistic), df=(size_control+size_treated -2), lower.tail = FALSE)
+
+    print(pvalue)
+    treated_mean <- mean(df$working_end [df$city== "New York City" & df$treated ==1])
+    control_mean <- mean(df$working_end [df$city== "New York City" & df$treated ==0])
+
+    treated_var <- var(df$working_end [df$city== "New York City" & df$treated ==1])
+    control_var <- var(df$working_end [df$city== "New York City" & df$treated ==0])
+
+
+    size_treated <- sum(df$treated==1 & df$city== "New York City")
+    size_control <- sum(df$treated==0 & df$city== "New York City")
+
+    diff <- treated_mean - control_mean
+
+
+    denom <- ( (size_treated-1 ) * treated_var + (size_control - 1) * control_var ) * (1/ size_control + 1/ size_treated)/ (size_control+size_treated-2) 
+
+    t_statistic <- diff / sqrt(denom)
+
+    print(t_statistic)
+
+    pvalue <- 2*pt(abs(t_statistic), df=(size_control+size_treated -2), lower.tail = FALSE)
+
+    print(pvalue)
+
+
+    #5. Have a look at the variable moved using voucher end. Did everyone who received a voucher
+    #move? How does it affect the interpretation of our results if not everyone moves? How does
+    #the interpretation change if everyone had moved? 
+    #No, a smaller group of people who received the voucher actually moved, meaning the expirement had an #imperfect-compliance issue. This affects the internal validity of the expirement because it messes with the 
+    #intent to treat parameter. If everyone who recieved a voucher moved, we would have perfcet compliance. 
+    #Since a small group moved, we can't extrapolate the voucher's effectiveness as accurately. 
+
+
+    #Q6: As is common in experiments, everyone in the MTO study volunteered to participate. In
+    #what ways might this affect the external validity of the results?
+
+    #external validity refers to how well the expirement can be generalized, so if all the participants 
+    #are volunteers, we are only getting data from a group who CHOSE to be in the study. The characteritics of this
+    #group might be very different from the population. For example, if a person CHOSE to particpate 
+    #in this study, they may already be more likely to move. If the sample characteristics and the 
+    #population characteristics are different, it's hard to repeat the expirement elsewhere and expect 
+    #similar results. 
+
+    #Q7: Let’s try redoing Part (3) using a simple linear regression.
+    #For each of the two outcomes in Part (3) above, run a simple linear regression of the outcome
+    #on a treatment indicator:
+    working_end_reg <- lm(working_end ~ treated==1, data = df)
+    summary(working_end_reg)
+    happy_end_reg <- lm(happy_end ~ treated==1, data=df)
+    summary(happy_end_reg)
+
+    #the numbers from our regression and from the table in question 3. 
+
+    #######################
+    #PART 3: SHORT ANSWER 
+
+    #1) INCORRECT, external validity is not more important than internal validity because if the ability to 
+    #generalize an expirement is not more important than the integrity of the expirement itslef. If the 
+    #expirement design is flawed, it automatically should not be replicated with a different population. Furthermore
+    #less information can be extrapolated from a non-internally valid expirement but you can still get 
+    #helpful information from an expirement that is not able to be replicated under different groups or #circumstances.
+
+    #2) CORRECT, T-hat is a sample of T (the true population). Once the sample size  becomes infintite, it is a #"sample"containing the entire population which means it IS the entire population and thus becomes T. Once they #are the containing the exact same things, T and T-hat will have the same average treatment effect. 
+
+    #3) Possible confound: someone who is not vaccinated may also be more likely to engage in other risky behaviour. 
+    #If this is true, they may be more reckless drivers as well which would make the causality between reckless 
+    #behaviour and risk of accidents, NOT covid vaccines and accidents. 
+
+    #4) Possible confound: People who choose to exercise may also be healthier in other ways, such as eating 
+    #healtheir and thus having a boosted immune system which is better equipped to recover from covid. In this case,
+    # exercise is not the CAUSE of protecting against fatal covid and the lurking variable may be the healthier 
+    #eating/other healthy choice protecting you from fatal covid. 
+
+## R Markdown
